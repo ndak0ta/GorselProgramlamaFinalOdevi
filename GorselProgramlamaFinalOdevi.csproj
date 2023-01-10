@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\IslemGecmisi.cs" />
     <Compile Include="Forms\Giris.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,16 +60,22 @@
       <DependentUpon>Havale.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Hesap.cs" />
-    <Compile Include="Forms\HesapGecmisForm.cs">
+    <Compile Include="Forms\HesapGecmis.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\HesapGecmisForm.Designer.cs">
-      <DependentUpon>HesapGecmisForm.cs</DependentUpon>
+    <Compile Include="Forms\HesapGecmis.Designer.cs">
+      <DependentUpon>HesapGecmis.cs</DependentUpon>
     </Compile>
-    <Compile Include="HesapPanel.cs">
+    <Compile Include="UserControls\HesapGecmisControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="HesapPanel.Designer.cs">
+    <Compile Include="UserControls\HesapGecmisControl.Designer.cs">
+      <DependentUpon>HesapGecmisControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\HesapPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\HesapPanel.Designer.cs">
       <DependentUpon>HesapPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\IslemSayfası.cs">
@@ -111,7 +118,13 @@
     <EmbeddedResource Include="Forms\Havale.resx">
       <DependentUpon>Havale.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HesapPanel.resx">
+    <EmbeddedResource Include="Forms\HesapGecmis.resx">
+      <DependentUpon>HesapGecmis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\HesapGecmisControl.resx">
+      <DependentUpon>HesapGecmisControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\HesapPanel.resx">
       <DependentUpon>HesapPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\IslemSayfası.resx">

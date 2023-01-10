@@ -54,7 +54,8 @@ namespace GorselProgramlamaFinalOdevi
 
         private void HesapGecmisButton_Click(object sender, EventArgs e)
         {
-            
+            HesapGecmis hesapGecmis = new HesapGecmis(hesap);
+            hesapGecmis.ShowDialog();
         }
     }
 }

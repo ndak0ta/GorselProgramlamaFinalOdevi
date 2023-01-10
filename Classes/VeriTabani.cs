@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GorselProgramlamaFinalOdevi.Classes;
+using System;
 using System.Collections.Generic;
 using System.Data.OleDb;
 using System.Windows.Forms;
@@ -62,6 +63,39 @@ namespace GorselProgramlamaFinalOdevi
                         lokasyon = (string)dataReader["lokasyon"],
                         paraMiktari = (decimal)dataReader["para_miktari"],
                         musteriId = (int)dataReader["musteri_id"],
+                    });
+                }
+
+                con.Close();
+                return list;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
+        }
+
+        public List<IslemGecmisi> SelectIslemGecmis(string query)
+        {
+            try
+            {
+                List<IslemGecmisi> list = new List<IslemGecmisi>();
+                con.Open();
+                cmd.CommandText = query;
+                cmd.Connection = con;
+                dataReader = cmd.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    list.Add(new IslemGecmisi()
+                    {
+                        Id = (int)dataReader["islem_id"],
+                        Tipi = (string)dataReader["tipi"],
+                        Aciklama = (string)dataReader["aciklama"],
+                        ParaMiktari = (decimal)dataReader["para_miktari"],
+                        HesapId = (int)dataReader["hesap_id"],
+                        MusteriId = (int)dataReader["musteri_id"],
                     });
                 }
 
