@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GorselProgramlamaFinalOdevi
@@ -44,6 +37,7 @@ namespace GorselProgramlamaFinalOdevi
                 bool result = false;
 
                 result = vt.Query("UPDATE Hesaplar SET para_miktari = para_miktari - " + cekilecekPara + " WHERE hesap_id = " + hesap.hesapId.ToString());
+                vt.Query("INSERT INTO Islem_Gecmis (tipi, aciklama, para_miktari, hesap_id, musteri_id) VALUES ('" + "Para çekme" + "', '" + "Para çekme" + "', '" + (-cekilecekPara).ToString() + "', '" + hesap.hesapId.ToString() + "', '" + hesap.musteriId.ToString() + "')");
 
                 if (result)
                     MessageBox.Show("İşlem başarıyla gerçekleştirildi", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
