@@ -21,6 +21,7 @@ namespace GorselProgramlamaFinalOdevi.UserControls
             IslemTipiLabel.Text = islemGecmisi.Tipi.ToString();
             ParaDegisimiLabel.Text = islemGecmisi.ParaMiktari.ToString();
             AciklamaLabel.Text = islemGecmisi.Aciklama.ToString();
+            TarihSaatLabel.Text = islemGecmisi.TarihSaat.ToString("dd/MM/yyyy HH:mm");
 
             if (islemGecmisi.ParaMiktari < 0)
                 ParaDegisimiLabel.ForeColor = Color.Red;

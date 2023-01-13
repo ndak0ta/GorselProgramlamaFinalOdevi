@@ -12,6 +12,7 @@ namespace GorselProgramlamaFinalOdevi.Classes
         public string Tipi { get; set; }
         public string Aciklama { get; set;}
         public decimal ParaMiktari { get; set; }
+        public DateTime TarihSaat { get; set; }
         public int HesapId { get; set; }
         public int MusteriId { get; set; }
     }

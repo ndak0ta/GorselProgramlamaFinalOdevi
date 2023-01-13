@@ -94,6 +94,7 @@ namespace GorselProgramlamaFinalOdevi
                         Tipi = (string)dataReader["tipi"],
                         Aciklama = (string)dataReader["aciklama"],
                         ParaMiktari = (decimal)dataReader["para_miktari"],
+                        TarihSaat = (DateTime)dataReader["tarih_saat"],
                         HesapId = (int)dataReader["hesap_id"],
                         MusteriId = (int)dataReader["musteri_id"],
                     });

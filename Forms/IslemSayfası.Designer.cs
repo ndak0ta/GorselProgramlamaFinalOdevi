@@ -31,9 +31,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.anasayfa = new System.Windows.Forms.TabPage();
             this.HesaplarTabPage = new System.Windows.Forms.TabPage();
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.tabControl1.SuspendLayout();
-            this.HesaplarTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -59,22 +57,14 @@
             // 
             // HesaplarTabPage
             // 
+            this.HesaplarTabPage.AutoScroll = true;
             this.HesaplarTabPage.BackColor = System.Drawing.Color.White;
-            this.HesaplarTabPage.Controls.Add(this.vScrollBar1);
             this.HesaplarTabPage.Location = new System.Drawing.Point(8, 39);
             this.HesaplarTabPage.Name = "HesaplarTabPage";
             this.HesaplarTabPage.Padding = new System.Windows.Forms.Padding(3);
             this.HesaplarTabPage.Size = new System.Drawing.Size(1658, 782);
             this.HesaplarTabPage.TabIndex = 1;
             this.HesaplarTabPage.Text = "Hesaplar";
-            // 
-            // vScrollBar1
-            // 
-            this.vScrollBar1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.vScrollBar1.Location = new System.Drawing.Point(1633, 3);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(22, 776);
-            this.vScrollBar1.TabIndex = 2;
             // 
             // IslemSayfası
             // 
@@ -86,7 +76,6 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.IslemSayfası_Load);
             this.tabControl1.ResumeLayout(false);
-            this.HesaplarTabPage.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -96,7 +85,6 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage anasayfa;
         private System.Windows.Forms.TabPage HesaplarTabPage;
-        private System.Windows.Forms.VScrollBar vScrollBar1;
     }
 }
 

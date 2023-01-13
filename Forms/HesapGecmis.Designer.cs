@@ -32,7 +32,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
+            this.Tarih = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -56,7 +56,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(610, 10);
+            this.label3.Location = new System.Drawing.Point(894, 10);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(99, 25);
             this.label3.TabIndex = 2;
@@ -71,20 +71,22 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Para Değişimi";
             // 
-            // vScrollBar1
+            // Tarih
             // 
-            this.vScrollBar1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.vScrollBar1.Location = new System.Drawing.Point(942, 0);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(34, 479);
-            this.vScrollBar1.TabIndex = 4;
+            this.Tarih.AutoSize = true;
+            this.Tarih.Location = new System.Drawing.Point(609, 10);
+            this.Tarih.Name = "Tarih";
+            this.Tarih.Size = new System.Drawing.Size(111, 25);
+            this.Tarih.TabIndex = 5;
+            this.Tarih.Text = "Tarih/Saat";
             // 
             // HesapGecmis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(976, 479);
-            this.Controls.Add(this.vScrollBar1);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(1204, 479);
+            this.Controls.Add(this.Tarih);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -103,6 +105,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.VScrollBar vScrollBar1;
+        private System.Windows.Forms.Label Tarih;
     }
 }
