@@ -90,7 +90,7 @@
             this.Controls.Add(this.IslemTipiLabel);
             this.Controls.Add(this.IslemNumarasıLabel);
             this.Name = "HesapGecmisControl";
-            this.Size = new System.Drawing.Size(1200, 50);
+            this.Size = new System.Drawing.Size(1130, 50);
             this.ResumeLayout(false);
             this.PerformLayout();
 

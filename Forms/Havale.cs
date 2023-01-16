@@ -38,6 +38,7 @@ namespace GorselProgramlamaFinalOdevi
             {
                 result1 = vt.Query("UPDATE Hesaplar SET para_miktari = para_miktari - " + cekilecekPara + " WHERE hesap_id = " + hesap.hesapId.ToString());
                 result2 = vt.Query("UPDATE Hesaplar SET para_miktari = para_miktari + " + ParaNumericUpDown.Value.ToString() + " WHERE hesap_id = " + HesapNumericUpDown.Value.ToString());
+
                 if (result1 && result2)
                 {
                     vt.Query("INSERT INTO Islem_Gecmis (tipi, aciklama, para_miktari, tarih_saat, hesap_id, musteri_id) VALUES " + "('" + "Havale" + "', '" + richTextBox1.Text + "', '" + (-cekilecekPara).ToString() + "', '" + DateTime.Now.ToString("dd-MM-yyyy HH:mm") + "', '" + hesap.hesapId.ToString() + "', '" + hesap.musteriId.ToString() + "')");

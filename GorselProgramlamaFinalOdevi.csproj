@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\IslemGecmisi.cs" />
+    <Compile Include="Classes\KrediKarti.cs" />
     <Compile Include="Forms\Giris.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,17 +67,23 @@
     <Compile Include="Forms\HesapGecmis.Designer.cs">
       <DependentUpon>HesapGecmis.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\YeniKrediKarti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\YeniKrediKarti.Designer.cs">
+      <DependentUpon>YeniKrediKarti.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\HesapGecmisControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\HesapGecmisControl.Designer.cs">
       <DependentUpon>HesapGecmisControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\HesapPanel.cs">
+    <Compile Include="UserControls\HesapBilgiControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\HesapPanel.Designer.cs">
-      <DependentUpon>HesapPanel.cs</DependentUpon>
+    <Compile Include="UserControls\HesapBilgiControl.Designer.cs">
+      <DependentUpon>HesapBilgiControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\IslemSayfası.cs">
       <SubType>Form</SubType>
@@ -112,6 +119,12 @@
     <Compile Include="Forms\YeniMusteri.Designer.cs">
       <DependentUpon>YeniMusteri.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\KrediKartiBilgiControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\KrediKartiBilgiControl.Designer.cs">
+      <DependentUpon>KrediKartiBilgiControl.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\Giris.resx">
       <DependentUpon>Giris.cs</DependentUpon>
     </EmbeddedResource>
@@ -121,11 +134,14 @@
     <EmbeddedResource Include="Forms\HesapGecmis.resx">
       <DependentUpon>HesapGecmis.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\YeniKrediKarti.resx">
+      <DependentUpon>YeniKrediKarti.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\HesapGecmisControl.resx">
       <DependentUpon>HesapGecmisControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\HesapPanel.resx">
-      <DependentUpon>HesapPanel.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\HesapBilgiControl.resx">
+      <DependentUpon>HesapBilgiControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\IslemSayfası.resx">
       <DependentUpon>IslemSayfası.cs</DependentUpon>
@@ -150,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\YeniMusteri.resx">
       <DependentUpon>YeniMusteri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\KrediKartiBilgiControl.resx">
+      <DependentUpon>KrediKartiBilgiControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GorselProgramlamaFinalOdevi.Forms;
+using System;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.Text;
@@ -22,11 +23,11 @@ namespace GorselProgramlamaFinalOdevi
             Controls.Clear();
             InitializeComponent();
             IslemSayfası_Load();
-            tabControl1.SelectedTab = HesaplarTabPage;
         }
 
         private void IslemSayfası_Load(object sender = null, EventArgs e = null)
         {
+            #region Hesaplar 
             int panelUzunlugu = 20;
 
             Panel panel = new Panel();
@@ -52,10 +53,34 @@ namespace GorselProgramlamaFinalOdevi
             {
                 panelUzunlugu += 75;
 
-                HesapPanel hp = new HesapPanel(item, this);
+                HesapBilgiControl hp = new HesapBilgiControl(item, this);
                 HesaplarTabPage.Controls.Add(hp);
                 hp.Location = new Point(10, panelUzunlugu);
             }
+            #endregion
+
+            #region Kredi Kartları
+
+            panelUzunlugu = 20;
+
+            panel = new Panel();
+            Label yeniKartLabel = new Label();
+
+            KrediKartlarıTabPage.Controls.Add(panel);
+            panel.Controls.Add(yeniKartLabel);
+            panel.Size = new Size(800, 65);
+            panel.Location = new Point(10, panelUzunlugu);
+            panel.Click += new EventHandler(KrediKartiOlustur);
+            panel.BackColor = SystemColors.Control;
+            yeniKartLabel.Location = new Point(250, 25);
+            yeniKartLabel.Text = "Yeni kart oluşturmak için lütfen buraya basın";
+            yeniKartLabel.TabIndex = 2;
+            yeniKartLabel.AutoSize = false;
+            yeniKartLabel.TextAlign = ContentAlignment.MiddleCenter;
+            yeniKartLabel.Dock = DockStyle.Fill;
+            yeniKartLabel.Click += new EventHandler(KrediKartiOlustur);
+
+            #endregion
         }
 
         private void HesapEkleButton_Click(object sender, EventArgs e)
@@ -63,6 +88,15 @@ namespace GorselProgramlamaFinalOdevi
             YeniHesap f = new YeniHesap(MusteriId);
             f.ShowDialog();
             FormYenile();
+            tabControl1.SelectedTab = HesaplarTabPage;
+        }
+
+        private void KrediKartiOlustur(object sender, EventArgs e)
+        {
+            YeniKrediKarti f = new YeniKrediKarti(MusteriId);
+            f.ShowDialog();
+            FormYenile();
+            tabControl1.SelectedTab = KrediKartlarıTabPage;
         }
     }
 }

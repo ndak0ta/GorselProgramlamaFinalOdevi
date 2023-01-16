@@ -110,6 +110,41 @@ namespace GorselProgramlamaFinalOdevi
             }
         }
 
+        public List<KrediKarti> SelectKrediKarti(string query)
+        {
+            try
+            {
+                List<KrediKarti> list = new List<KrediKarti>();
+                con.Open();
+                cmd.CommandText = query;
+                cmd.Connection = con;
+                dataReader = cmd.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    list.Add(new KrediKarti()
+                    {
+                        Id = (int)dataReader["kredi_kart_id"],
+                        Limit = (int)dataReader["limit"],
+                        Anakart = (bool)dataReader["anakart"],
+                        Borc = (decimal)dataReader["borc"],
+                        OnlineAlisveris = (bool)dataReader["online_alisveris"],
+                        HesapKesim = (int)dataReader["hesap_kesim"],
+                        MusteriId = (int)dataReader["musteri_id"],
+                        HesapId = (int)dataReader["hesap_id"]
+                    });
+                }
+
+                con.Close();
+                return list;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
+        }
+
         public bool Query(string query)
         {
             try

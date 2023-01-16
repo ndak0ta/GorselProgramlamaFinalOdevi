@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace GorselProgramlamaFinalOdevi
 {
-    public partial class HesapPanel : UserControl
+    public partial class HesapBilgiControl : UserControl
     {
-        public HesapPanel(Hesap hsp, IslemSayfası iS)
+        public HesapBilgiControl(Hesap hsp, IslemSayfası iS)
         {
             InitializeComponent();
             hesap = hsp;
@@ -36,6 +36,7 @@ namespace GorselProgramlamaFinalOdevi
             ParaCek paraCek = new ParaCek(hesap);
             paraCek.ShowDialog();
             islemSayfasi.FormYenile();
+            islemSayfasi.tabControl1.SelectedTab = islemSayfasi.HesaplarTabPage;
         }
 
         private void ParaYatirButton_Click(object sender, EventArgs e)
@@ -43,6 +44,7 @@ namespace GorselProgramlamaFinalOdevi
             ParaYatir paraYatir = new ParaYatir(hesap);
             paraYatir.ShowDialog();
             islemSayfasi.FormYenile();
+            islemSayfasi.tabControl1.SelectedTab = islemSayfasi.HesaplarTabPage;
         }
 
         private void HavaleButton_Click(object sender, EventArgs e)
@@ -50,6 +52,7 @@ namespace GorselProgramlamaFinalOdevi
             Havale havale = new Havale(hesap);
             havale.ShowDialog();
             islemSayfasi.FormYenile();
+            islemSayfasi.tabControl1.SelectedTab = islemSayfasi.HesaplarTabPage;
         }
 
         private void HesapGecmisButton_Click(object sender, EventArgs e)

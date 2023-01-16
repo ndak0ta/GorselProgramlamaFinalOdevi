@@ -31,6 +31,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.anasayfa = new System.Windows.Forms.TabPage();
             this.HesaplarTabPage = new System.Windows.Forms.TabPage();
+            this.KrediKartlarıTabPage = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -38,6 +39,7 @@
             // 
             this.tabControl1.Controls.Add(this.anasayfa);
             this.tabControl1.Controls.Add(this.HesaplarTabPage);
+            this.tabControl1.Controls.Add(this.KrediKartlarıTabPage);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -66,6 +68,16 @@
             this.HesaplarTabPage.TabIndex = 1;
             this.HesaplarTabPage.Text = "Hesaplar";
             // 
+            // KrediKartlarıTabPage
+            // 
+            this.KrediKartlarıTabPage.Location = new System.Drawing.Point(8, 39);
+            this.KrediKartlarıTabPage.Name = "KrediKartlarıTabPage";
+            this.KrediKartlarıTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.KrediKartlarıTabPage.Size = new System.Drawing.Size(1658, 782);
+            this.KrediKartlarıTabPage.TabIndex = 2;
+            this.KrediKartlarıTabPage.Text = "Kredi Kartları";
+            this.KrediKartlarıTabPage.UseVisualStyleBackColor = true;
+            // 
             // IslemSayfası
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -82,9 +94,10 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
+        public System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage anasayfa;
-        private System.Windows.Forms.TabPage HesaplarTabPage;
+        public System.Windows.Forms.TabPage HesaplarTabPage;
+        private System.Windows.Forms.TabPage KrediKartlarıTabPage;
     }
 }
 

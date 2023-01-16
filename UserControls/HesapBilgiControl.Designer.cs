@@ -1,6 +1,6 @@
 ﻿namespace GorselProgramlamaFinalOdevi
 {
-    partial class HesapPanel
+    partial class HesapBilgiControl
     {
         /// <summary> 
         /// Required designer variable.
