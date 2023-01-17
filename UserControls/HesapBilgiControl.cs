@@ -1,19 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.OleDb;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GorselProgramlamaFinalOdevi
 {
     public partial class HesapBilgiControl : UserControl
     {
-        public HesapBilgiControl(Hesap hsp, IslemSayfası iS)
+        public HesapBilgiControl(Hesap hsp, IslemSayfasi iS)
         {
             InitializeComponent();
             hesap = hsp;
@@ -21,7 +14,7 @@ namespace GorselProgramlamaFinalOdevi
         }
 
         private Hesap hesap { get; set; }
-        private IslemSayfası islemSayfasi { get; set; }
+        private IslemSayfasi islemSayfasi { get; set; }
 
         private void HesapPanel_Load(object sender = null, EventArgs e = null)
         {

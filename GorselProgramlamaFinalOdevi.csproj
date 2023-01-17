@@ -85,11 +85,11 @@
     <Compile Include="UserControls\HesapBilgiControl.Designer.cs">
       <DependentUpon>HesapBilgiControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\IslemSayfası.cs">
+    <Compile Include="Forms\IslemSayfasi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\IslemSayfası.Designer.cs">
-      <DependentUpon>IslemSayfası.cs</DependentUpon>
+    <Compile Include="Forms\IslemSayfasi.Designer.cs">
+      <DependentUpon>IslemSayfasi.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Musteri.cs" />
     <Compile Include="Forms\ParaCek.cs">
@@ -143,8 +143,8 @@
     <EmbeddedResource Include="UserControls\HesapBilgiControl.resx">
       <DependentUpon>HesapBilgiControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\IslemSayfası.resx">
-      <DependentUpon>IslemSayfası.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\IslemSayfasi.resx">
+      <DependentUpon>IslemSayfasi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ParaCek.resx">
       <DependentUpon>ParaCek.cs</DependentUpon>

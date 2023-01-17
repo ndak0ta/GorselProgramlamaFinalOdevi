@@ -1,15 +1,14 @@
 ﻿using GorselProgramlamaFinalOdevi.Forms;
+using GorselProgramlamaFinalOdevi.UserControls;
 using System;
 using System.Drawing;
-using System.Drawing.Printing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace GorselProgramlamaFinalOdevi
 {
-    public partial class IslemSayfası : Form
+    public partial class IslemSayfasi : Form
     {
-        public IslemSayfası(int musteriId)
+        public IslemSayfasi(int musteriId)
         {
             InitializeComponent();
             MusteriId = musteriId;
@@ -53,9 +52,9 @@ namespace GorselProgramlamaFinalOdevi
             {
                 panelUzunlugu += 75;
 
-                HesapBilgiControl hp = new HesapBilgiControl(item, this);
-                HesaplarTabPage.Controls.Add(hp);
-                hp.Location = new Point(10, panelUzunlugu);
+                HesapBilgiControl hesapBilgiControl = new HesapBilgiControl(item, this);
+                HesaplarTabPage.Controls.Add(hesapBilgiControl);
+                hesapBilgiControl.Location = new Point(10, panelUzunlugu);
             }
             #endregion
 
@@ -79,6 +78,15 @@ namespace GorselProgramlamaFinalOdevi
             yeniKartLabel.TextAlign = ContentAlignment.MiddleCenter;
             yeniKartLabel.Dock = DockStyle.Fill;
             yeniKartLabel.Click += new EventHandler(KrediKartiOlustur);
+
+            foreach (var item in vt.SelectKrediKarti("SELECT * FROM Kredi_Kartlari WHERE musteri_id = " + MusteriId))
+            {
+                panelUzunlugu += 75;
+
+                KrediKartiBilgiControl krediKartiBilgiControl = new KrediKartiBilgiControl(item, this);
+                KrediKartlarıTabPage.Controls.Add(krediKartiBilgiControl);
+                krediKartiBilgiControl.Location = new Point(10, panelUzunlugu);
+            }
 
             #endregion
         }

@@ -43,7 +43,7 @@ namespace GorselProgramlamaFinalOdevi.Forms
                 if (((KeyValuePair<int, string>)comboBox1.SelectedItem).Key != 0)
                     result = vt.Query("INSERT INTO Kredi_Kartlari (limit, anakart, online_alisveris, hesap_kesim, musteri_id, hesap_id) VALUES ('" +
                         limit + "', " +
-                        true + ", " +
+                        false + ", " +
                         checkBox1.Checked + ", '" +
                         DateTime.Now.ToString("dd") + "', '" +
                         MusteriId + "', '" +
@@ -51,7 +51,7 @@ namespace GorselProgramlamaFinalOdevi.Forms
                 else
                     result = vt.Query("INSERT INTO Kredi_Kartlari (limit, anakart, online_alisveris, hesap_kesim, musteri_id) VALUES ('" +
                         limit + "', " +
-                        true + ", " +
+                        false + ", " +
                         checkBox1.Checked + ", '" +
                         DateTime.Now.ToString("dd") + "', '" +
                         MusteriId + "')");
@@ -61,7 +61,7 @@ namespace GorselProgramlamaFinalOdevi.Forms
                 if (((KeyValuePair<int, string>)comboBox1.SelectedItem).Key != 0)
                     result = vt.Query("INSERT INTO Kredi_Kartlari (limit, anakart, online_alisveris, hesap_kesim, musteri_id, hesap_id) VALUES ('" +
                         limit + "', " +
-                        false + ", " +
+                        true + ", " +
                         checkBox1.Checked + ", '" +
                         DateTime.Now.ToString("dd") + "', '" +
                         MusteriId + "', '" +
@@ -69,7 +69,7 @@ namespace GorselProgramlamaFinalOdevi.Forms
                 else
                     result = vt.Query("INSERT INTO Kredi_Kartlari (limit, anakart, online_alisveris, hesap_kesim, musteri_id) VALUES ('" +
                         limit + "', " +
-                        false + ", " +
+                        true + ", " +
                         checkBox1.Checked + ", '" +
                         DateTime.Now.ToString("dd") + "', '" +
                         MusteriId + "')");

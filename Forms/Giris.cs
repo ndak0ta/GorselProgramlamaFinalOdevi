@@ -20,7 +20,7 @@ namespace GorselProgramlamaFinalOdevi
                 {
                     if (item.sifre == Sifre_TextBox.Text)
                     {
-                        IslemSayfası f = new IslemSayfası(item.musteriId);
+                        IslemSayfasi f = new IslemSayfasi(item.musteriId);
                         Hide();
                         f.ShowDialog();
                         Show();

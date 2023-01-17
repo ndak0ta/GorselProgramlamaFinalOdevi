@@ -1,6 +1,6 @@
 ﻿namespace GorselProgramlamaFinalOdevi
 {
-    partial class IslemSayfası
+    partial class IslemSayfasi
     {
         /// <summary>
         /// Required designer variable.
@@ -70,13 +70,13 @@
             // 
             // KrediKartlarıTabPage
             // 
+            this.KrediKartlarıTabPage.BackColor = System.Drawing.Color.White;
             this.KrediKartlarıTabPage.Location = new System.Drawing.Point(8, 39);
             this.KrediKartlarıTabPage.Name = "KrediKartlarıTabPage";
             this.KrediKartlarıTabPage.Padding = new System.Windows.Forms.Padding(3);
             this.KrediKartlarıTabPage.Size = new System.Drawing.Size(1658, 782);
             this.KrediKartlarıTabPage.TabIndex = 2;
             this.KrediKartlarıTabPage.Text = "Kredi Kartları";
-            this.KrediKartlarıTabPage.UseVisualStyleBackColor = true;
             // 
             // IslemSayfası
             // 
@@ -97,7 +97,7 @@
         public System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage anasayfa;
         public System.Windows.Forms.TabPage HesaplarTabPage;
-        private System.Windows.Forms.TabPage KrediKartlarıTabPage;
+        public System.Windows.Forms.TabPage KrediKartlarıTabPage;
     }
 }
 

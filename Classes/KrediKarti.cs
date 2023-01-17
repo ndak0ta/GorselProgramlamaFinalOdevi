@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GorselProgramlamaFinalOdevi.Classes
 {
-    internal class KrediKarti
+    public class KrediKarti
     {
         public int Id { get; set; }
         public int Limit { get; set; }
