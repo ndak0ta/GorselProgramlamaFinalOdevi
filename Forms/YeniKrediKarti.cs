@@ -1,13 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace GorselProgramlamaFinalOdevi.Forms
 {
@@ -17,8 +10,10 @@ namespace GorselProgramlamaFinalOdevi.Forms
         {
             InitializeComponent();
 
-            Dictionary<int, string> hesaplar = new Dictionary<int, string>();
-            hesaplar.Add(0, "İstemiyorum");
+            Dictionary<int, string> hesaplar = new Dictionary<int, string>
+            {
+                { 0, "İstemiyorum" }
+            };
 
             foreach (var item in vt.SelectHesap("SELECT * FROM Hesaplar WHERE musteri_id = " + musteriId.ToString()))
                 hesaplar.Add(item.hesapId, item.adi);

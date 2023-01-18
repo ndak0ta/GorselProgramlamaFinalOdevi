@@ -67,6 +67,12 @@
     <Compile Include="Forms\HesapGecmis.Designer.cs">
       <DependentUpon>HesapGecmis.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\KartBorcOde.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\KartBorcOde.Designer.cs">
+      <DependentUpon>KartBorcOde.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\YeniKrediKarti.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HesapGecmis.resx">
       <DependentUpon>HesapGecmis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\KartBorcOde.resx">
+      <DependentUpon>KartBorcOde.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\YeniKrediKarti.resx">
       <DependentUpon>YeniKrediKarti.cs</DependentUpon>

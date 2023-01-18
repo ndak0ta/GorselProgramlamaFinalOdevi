@@ -1,4 +1,5 @@
 ﻿using GorselProgramlamaFinalOdevi.Classes;
+using GorselProgramlamaFinalOdevi.Forms;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -24,12 +25,19 @@ namespace GorselProgramlamaFinalOdevi.UserControls
 
         KrediKarti KrediKarti { get; set; }
         IslemSayfasi IslemSayfasi { get; set; }
-
         VeriTabani vt = new VeriTabani();
 
         private void OnlineAlısverisAcKapaButton_Click(object sender, System.EventArgs e)
         {
             vt.Query("UPDATE Kredi_Kartlari SET online_alisveris = " + !KrediKarti.OnlineAlisveris + " WHERE kredi_kart_id = " + KrediKarti.Id);
+            IslemSayfasi.FormYenile();
+            IslemSayfasi.tabControl1.SelectedTab = IslemSayfasi.KrediKartlarıTabPage;
+        }
+
+        private void BorcOdemeButton_Click(object sender, System.EventArgs e)
+        {
+            KartBorcOde f = new KartBorcOde(KrediKarti);
+            f.ShowDialog();
             IslemSayfasi.FormYenile();
             IslemSayfasi.tabControl1.SelectedTab = IslemSayfasi.KrediKartlarıTabPage;
         }

@@ -35,6 +35,7 @@
             this.HesapKesimLabel = new System.Windows.Forms.Label();
             this.OnlineAlısverisAcKapaButton = new System.Windows.Forms.Button();
             this.OnlineAlisverisLabel = new System.Windows.Forms.Label();
+            this.BorcOdemeButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // KartNoLabel
@@ -84,9 +85,9 @@
             // 
             // OnlineAlısverisAcKapaButton
             // 
-            this.OnlineAlısverisAcKapaButton.Location = new System.Drawing.Point(1353, 19);
+            this.OnlineAlısverisAcKapaButton.Location = new System.Drawing.Point(1399, 19);
             this.OnlineAlısverisAcKapaButton.Name = "OnlineAlısverisAcKapaButton";
-            this.OnlineAlısverisAcKapaButton.Size = new System.Drawing.Size(225, 77);
+            this.OnlineAlısverisAcKapaButton.Size = new System.Drawing.Size(150, 77);
             this.OnlineAlısverisAcKapaButton.TabIndex = 6;
             this.OnlineAlısverisAcKapaButton.Text = "Online Alışveriş Aç/Kapa";
             this.OnlineAlısverisAcKapaButton.UseVisualStyleBackColor = true;
@@ -101,10 +102,21 @@
             this.OnlineAlisverisLabel.TabIndex = 7;
             this.OnlineAlisverisLabel.Text = "Online Alışveriş: ";
             // 
+            // BorcOdemeButton
+            // 
+            this.BorcOdemeButton.Location = new System.Drawing.Point(1243, 19);
+            this.BorcOdemeButton.Name = "BorcOdemeButton";
+            this.BorcOdemeButton.Size = new System.Drawing.Size(150, 77);
+            this.BorcOdemeButton.TabIndex = 8;
+            this.BorcOdemeButton.Text = "Borç Ödeme";
+            this.BorcOdemeButton.UseVisualStyleBackColor = true;
+            this.BorcOdemeButton.Click += new System.EventHandler(this.BorcOdemeButton_Click);
+            // 
             // KrediKartiBilgiControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.BorcOdemeButton);
             this.Controls.Add(this.OnlineAlisverisLabel);
             this.Controls.Add(this.OnlineAlısverisAcKapaButton);
             this.Controls.Add(this.HesapKesimLabel);
@@ -128,5 +140,6 @@
         private System.Windows.Forms.Label HesapKesimLabel;
         private System.Windows.Forms.Button OnlineAlısverisAcKapaButton;
         private System.Windows.Forms.Label OnlineAlisverisLabel;
+        private System.Windows.Forms.Button BorcOdemeButton;
     }
 }
