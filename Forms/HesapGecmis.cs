@@ -22,6 +22,8 @@ namespace GorselProgramlamaFinalOdevi
 
             foreach (var item in vt.SelectIslemGecmis("SELECT * FROM Islem_Gecmis WHERE hesap_id = " + hesap.hesapId.ToString()))
             {
+                /* Hesap aktivitelerini HesapGecmisControl'üne göndererek yazdır
+                 */
                 HesapGecmisControl hesapGecmisControl = new HesapGecmisControl(item);
                 Controls.Add(hesapGecmisControl);
                 hesapGecmisControl.Location = new Point(10, panelUzunlugu);

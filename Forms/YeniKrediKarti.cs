@@ -10,6 +10,9 @@ namespace GorselProgramlamaFinalOdevi.Forms
         {
             InitializeComponent();
 
+            /* Müşterinin sahip olduğu hesapları ComboBox'a ekle
+             */
+
             Dictionary<int, string> hesaplar = new Dictionary<int, string>
             {
                 { 0, "İstemiyorum" }
@@ -30,6 +33,15 @@ namespace GorselProgramlamaFinalOdevi.Forms
 
         private void KartOlusturButton_Click(object sender, EventArgs e)
         {
+            /* Girilen maaş bilgsini 3 ile çarp ve limit olarak ata 
+             * (kredi kartı limitleri genelde kişilerin maaşlarının 3 ile 4 katına tekabül ediyor) 
+             * Müşterinin daha önce kart sahibi olup olmadığını kontrol et
+             * eğer sahip değilse yeni kart anakart olarak tanımlanacak
+             * eğer sahipse ek kart olarak tanımlanacak
+             * kullanıcının kartını hesabına bağlamak isteyip istemediğin kontrol et
+             * eğer istiyorsa veritabanına kart eklenirken hesap bilgisiyle beraber girilecek
+             * eğer istemiyorsa hesap bilgisi boş bırakılacak
+             */
             bool result = false;
             int limit = Convert.ToInt32(textBox1.Text) * 3;
 

@@ -29,26 +29,24 @@
         private void InitializeComponent()
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.anasayfa = new System.Windows.Forms.TabPage();
             this.HesaplarTabPage = new System.Windows.Forms.TabPage();
             this.KrediKartlarıTabPage = new System.Windows.Forms.TabPage();
             this.OdemelerTabPage = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
-            this.OdemelerComboBox = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.OdemeTextBox = new System.Windows.Forms.TextBox();
-            this.OdemelerButton = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.OdemeSekliComboBox = new System.Windows.Forms.ComboBox();
-            this.HesapKrediKartiLabel = new System.Windows.Forms.Label();
             this.HesapKrediKartiComboBox = new System.Windows.Forms.ComboBox();
+            this.HesapKrediKartiLabel = new System.Windows.Forms.Label();
+            this.OdemeSekliComboBox = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.OdemelerButton = new System.Windows.Forms.Button();
+            this.OdemeTextBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.OdemelerComboBox = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.OdemelerTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.anasayfa);
             this.tabControl1.Controls.Add(this.HesaplarTabPage);
             this.tabControl1.Controls.Add(this.KrediKartlarıTabPage);
             this.tabControl1.Controls.Add(this.OdemelerTabPage);
@@ -58,16 +56,6 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1674, 829);
             this.tabControl1.TabIndex = 0;
-            // 
-            // anasayfa
-            // 
-            this.anasayfa.Location = new System.Drawing.Point(8, 39);
-            this.anasayfa.Name = "anasayfa";
-            this.anasayfa.Padding = new System.Windows.Forms.Padding(3);
-            this.anasayfa.Size = new System.Drawing.Size(1658, 782);
-            this.anasayfa.TabIndex = 0;
-            this.anasayfa.Text = "Anasayfa";
-            this.anasayfa.UseVisualStyleBackColor = true;
             // 
             // HesaplarTabPage
             // 
@@ -109,14 +97,74 @@
             this.OdemelerTabPage.Text = " Ödemeler";
             this.OdemelerTabPage.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // HesapKrediKartiComboBox
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(525, 221);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(137, 25);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Ödeme Türü:";
+            this.HesapKrediKartiComboBox.FormattingEnabled = true;
+            this.HesapKrediKartiComboBox.Location = new System.Drawing.Point(668, 424);
+            this.HesapKrediKartiComboBox.Name = "HesapKrediKartiComboBox";
+            this.HesapKrediKartiComboBox.Size = new System.Drawing.Size(227, 33);
+            this.HesapKrediKartiComboBox.TabIndex = 9;
+            this.HesapKrediKartiComboBox.Visible = false;
+            // 
+            // HesapKrediKartiLabel
+            // 
+            this.HesapKrediKartiLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.HesapKrediKartiLabel.Location = new System.Drawing.Point(530, 427);
+            this.HesapKrediKartiLabel.Name = "HesapKrediKartiLabel";
+            this.HesapKrediKartiLabel.Size = new System.Drawing.Size(132, 25);
+            this.HesapKrediKartiLabel.TabIndex = 8;
+            this.HesapKrediKartiLabel.Text = "label4";
+            this.HesapKrediKartiLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.HesapKrediKartiLabel.Visible = false;
+            // 
+            // OdemeSekliComboBox
+            // 
+            this.OdemeSekliComboBox.FormattingEnabled = true;
+            this.OdemeSekliComboBox.Items.AddRange(new object[] {
+            "Kredi Kartı",
+            "Hesap"});
+            this.OdemeSekliComboBox.Location = new System.Drawing.Point(668, 364);
+            this.OdemeSekliComboBox.Name = "OdemeSekliComboBox";
+            this.OdemeSekliComboBox.Size = new System.Drawing.Size(227, 33);
+            this.OdemeSekliComboBox.TabIndex = 7;
+            this.OdemeSekliComboBox.SelectedIndexChanged += new System.EventHandler(this.OdemeSekliComboBox_SelectedIndexChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(522, 372);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(140, 25);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Ödeme Şekli:";
+            // 
+            // OdemelerButton
+            // 
+            this.OdemelerButton.Location = new System.Drawing.Point(668, 489);
+            this.OdemelerButton.Name = "OdemelerButton";
+            this.OdemelerButton.Size = new System.Drawing.Size(227, 57);
+            this.OdemelerButton.TabIndex = 5;
+            this.OdemelerButton.Text = "Ödemeyi Yap";
+            this.OdemelerButton.UseVisualStyleBackColor = true;
+            this.OdemelerButton.Click += new System.EventHandler(this.OdemelerButton_Click);
+            // 
+            // OdemeTextBox
+            // 
+            this.OdemeTextBox.Location = new System.Drawing.Point(668, 291);
+            this.OdemeTextBox.Name = "OdemeTextBox";
+            this.OdemeTextBox.Size = new System.Drawing.Size(227, 31);
+            this.OdemeTextBox.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(594, 297);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(68, 25);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Tutar:";
             // 
             // OdemelerComboBox
             // 
@@ -132,74 +180,14 @@
             this.OdemelerComboBox.Size = new System.Drawing.Size(227, 33);
             this.OdemelerComboBox.TabIndex = 2;
             // 
-            // label2
+            // label1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(594, 297);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 25);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Tutar:";
-            // 
-            // OdemeTextBox
-            // 
-            this.OdemeTextBox.Location = new System.Drawing.Point(668, 291);
-            this.OdemeTextBox.Name = "OdemeTextBox";
-            this.OdemeTextBox.Size = new System.Drawing.Size(227, 31);
-            this.OdemeTextBox.TabIndex = 4;
-            // 
-            // OdemelerButton
-            // 
-            this.OdemelerButton.Location = new System.Drawing.Point(668, 489);
-            this.OdemelerButton.Name = "OdemelerButton";
-            this.OdemelerButton.Size = new System.Drawing.Size(227, 57);
-            this.OdemelerButton.TabIndex = 5;
-            this.OdemelerButton.Text = "Ödemeyi Yap";
-            this.OdemelerButton.UseVisualStyleBackColor = true;
-            this.OdemelerButton.Click += new System.EventHandler(this.OdemelerButton_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(522, 372);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(140, 25);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Ödeme Şekli:";
-            // 
-            // OdemeSekliComboBox
-            // 
-            this.OdemeSekliComboBox.FormattingEnabled = true;
-            this.OdemeSekliComboBox.Items.AddRange(new object[] {
-            "Kredi Kartı",
-            "Hesap"});
-            this.OdemeSekliComboBox.Location = new System.Drawing.Point(668, 364);
-            this.OdemeSekliComboBox.Name = "OdemeSekliComboBox";
-            this.OdemeSekliComboBox.Size = new System.Drawing.Size(227, 33);
-            this.OdemeSekliComboBox.TabIndex = 7;
-            this.OdemeSekliComboBox.SelectedIndexChanged += new System.EventHandler(this.OdemeSekliComboBox_SelectedIndexChanged);
-            // 
-            // HesapKrediKartiLabel
-            // 
-            this.HesapKrediKartiLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.HesapKrediKartiLabel.Location = new System.Drawing.Point(530, 427);
-            this.HesapKrediKartiLabel.Name = "HesapKrediKartiLabel";
-            this.HesapKrediKartiLabel.Size = new System.Drawing.Size(132, 25);
-            this.HesapKrediKartiLabel.TabIndex = 8;
-            this.HesapKrediKartiLabel.Text = "label4";
-            this.HesapKrediKartiLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.HesapKrediKartiLabel.Visible = false;
-            // 
-            // HesapKrediKartiComboBox
-            // 
-            this.HesapKrediKartiComboBox.FormattingEnabled = true;
-            this.HesapKrediKartiComboBox.Location = new System.Drawing.Point(668, 424);
-            this.HesapKrediKartiComboBox.Name = "HesapKrediKartiComboBox";
-            this.HesapKrediKartiComboBox.Size = new System.Drawing.Size(227, 33);
-            this.HesapKrediKartiComboBox.TabIndex = 9;
-            this.HesapKrediKartiComboBox.Visible = false;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(525, 221);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(137, 25);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Ödeme Türü:";
             // 
             // IslemSayfasi
             // 
@@ -222,7 +210,6 @@
         #endregion
 
         public System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage anasayfa;
         public System.Windows.Forms.TabPage HesaplarTabPage;
         public System.Windows.Forms.TabPage KrediKartlarıTabPage;
         private System.Windows.Forms.TabPage OdemelerTabPage;

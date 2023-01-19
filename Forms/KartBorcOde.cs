@@ -1,12 +1,6 @@
 ﻿using GorselProgramlamaFinalOdevi.Classes;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GorselProgramlamaFinalOdevi.Forms
@@ -19,6 +13,7 @@ namespace GorselProgramlamaFinalOdevi.Forms
 
             KrediKarti = krediKarti;
 
+            // Kullanıcının borcu ödeyeceğei hesabı seçebilmesi için hesapları ekrana yazdır
             Dictionary<int, string> hesaplar = new Dictionary<int, string>();
 
             foreach (var item in vt.SelectHesap("SELECT * FROM Hesaplar WHERE musteri_id = " + krediKarti.MusteriId))
@@ -34,6 +29,18 @@ namespace GorselProgramlamaFinalOdevi.Forms
 
         private void OdeButton_Click(object sender, EventArgs e)
         {
+            /* Kullanıcı kart borcunun tamamını mı yoksa bir kısmınımı ödeyeceğeini kontrol et
+             * Eğer tamamı ödenecek ise 
+             * seçili hesapta borc kadar para olup olmadığını kontrol et
+             * eğer varsa borc kadar para miktarını azalt
+             * ve işlem geçmişine kaydet
+             * 
+             * Eğer bir kısmı ödenecek ise hesapta girilen tutar kadar para olup olmadığını kontrol et
+             * eğer varsa hesaptan girilen tutar kadar para miktarı azalt
+             * işlem geçmişine kaydet
+             * 
+             * formu kapat
+             */
             bool result = false;
             int hesapId = ((KeyValuePair<int, string>)comboBox1.SelectedItem).Key;
 
@@ -47,7 +54,7 @@ namespace GorselProgramlamaFinalOdevi.Forms
 
                 if (result)
                 {
-                    vt.Query("INSERT INTO Islem_Gecmis (tipi, aciklama, para_miktari, tarih_saat, hesap_id, musteri_id) VALUES ('" + "Kart Borcu Ödemesi" + "', '" + "Kart Borcu Ödemesi" + "', '-" + KrediKarti.Borc +"', '" + DateTime.Now.ToString("dd-MM-yyyy HH:mm") + "', '" + hesapId + "', '" + KrediKarti.MusteriId + "')");
+                    vt.Query("INSERT INTO Islem_Gecmis (tipi, aciklama, para_miktari, tarih_saat, hesap_id, musteri_id) VALUES ('" + "Kart Borcu Ödemesi" + "', '" + "Kart Borcu Ödemesi" + "', '-" + KrediKarti.Borc + "', '" + DateTime.Now.ToString("dd-MM-yyyy HH:mm") + "', '" + hesapId + "', '" + KrediKarti.MusteriId + "')");
                     MessageBox.Show("İşlem Başarıyla Gerçekleştirildi!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
@@ -63,18 +70,23 @@ namespace GorselProgramlamaFinalOdevi.Forms
 
                 if (result)
                 {
-                    vt.Query("INSERT INTO Islem_Gecmis (tipi, aciklama, para_miktari, tarih_saat, hesap_id, musteri_id) VALUES ('" + "Kart Borcu Ödemesi" + "', '" + "Kart Borcu Ödemesi" + "', '-" + TutarTextBox.Text +"', '" + DateTime.Now.ToString("dd-MM-yyyy HH:mm") + "', '" + hesapId + "', '" + KrediKarti.MusteriId + "')");
+                    vt.Query("INSERT INTO Islem_Gecmis (tipi, aciklama, para_miktari, tarih_saat, hesap_id, musteri_id) VALUES ('" + "Kart Borcu Ödemesi" + "', '" + "Kart Borcu Ödemesi" + "', '-" + TutarTextBox.Text + "', '" + DateTime.Now.ToString("dd-MM-yyyy HH:mm") + "', '" + hesapId + "', '" + KrediKarti.MusteriId + "')");
                     MessageBox.Show("İşlem Başarıyla Gerçekleştirildi!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                     MessageBox.Show("İşleminiz gerçekleştirilemedi!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            
+            Close();
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
+            /* Kart borcunun tamamı ödenecek ise eğer
+             * sayı girşi bölümünü disable et
+             * eğer girilen tutar kadar ödenecek ise 
+             * enable et
+             */
             if (TamaminiOdeCheckBox.Checked)
             {
                 TutarLabel.Enabled = false;

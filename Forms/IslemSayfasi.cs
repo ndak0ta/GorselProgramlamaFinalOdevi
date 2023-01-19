@@ -3,7 +3,6 @@ using GorselProgramlamaFinalOdevi.UserControls;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace GorselProgramlamaFinalOdevi
 {
@@ -15,9 +14,11 @@ namespace GorselProgramlamaFinalOdevi
             MusteriId = musteriId;
         }
 
+        // Giriş yapan müşteriyi tespit edip işlem yapabilmek için giriş formunda musteri_id'yi aldık
         public int MusteriId { get; set; }
         VeriTabani vt = new VeriTabani();
 
+        // Herhangi bir işlem gerçekleştirildiğinde işlem sayfasındaki verileri yenilemek için kullanacağımız fonksiyon
         public void FormYenile()
         {
             Controls.Clear();
@@ -28,8 +29,12 @@ namespace GorselProgramlamaFinalOdevi
         private void IslemSayfası_Load(object sender = null, EventArgs e = null)
         {
             #region Hesaplar 
+
+            // Hesap sayfası
+            // Panelleri alt alta kaydırabilmek için bir değişken tanımladık
             int panelUzunlugu = 20;
 
+            // İlk panelimiz sabit ve ekleme fonksiyonu olacağı için statik olarak tanımladık
             Panel panel = new Panel();
             Label yeniHesapLabel = new Label();
 
@@ -46,12 +51,13 @@ namespace GorselProgramlamaFinalOdevi
             yeniHesapLabel.TextAlign = ContentAlignment.MiddleCenter;
             yeniHesapLabel.Dock = DockStyle.Fill;
             yeniHesapLabel.Click += new EventHandler(HesapEkleButton_Click);
-               
+
             panel.Visible = true;
 
+            // Hesapları tanımlanan UserControl ile ekrana yazdır
             foreach (var item in vt.SelectHesap("SELECT * FROM Hesaplar WHERE musteri_id = " + MusteriId.ToString()))
             {
-                panelUzunlugu += 75;
+                panelUzunlugu += 75; // Control'lerin alt alta gelmesi için her seferinde uzunluk değerini arttır
 
                 HesapBilgiControl hesapBilgiControl = new HesapBilgiControl(item, this);
                 HesaplarTabPage.Controls.Add(hesapBilgiControl);
@@ -60,6 +66,8 @@ namespace GorselProgramlamaFinalOdevi
             #endregion
 
             #region Kredi Kartları
+
+            // Hesaplar ile aynı algoritma kredi kartı için ufak değişiklik yapıldı
 
             panelUzunlugu = 20;
 
@@ -92,6 +100,8 @@ namespace GorselProgramlamaFinalOdevi
             #endregion
         }
 
+        // Hesap ekle buton kaldırıldı ama fonksiyon faklı yerlerde kullanılıyor
+        // Hesap oluşturmak için Yenihesap metodunu çağır
         private void HesapEkleButton_Click(object sender, EventArgs e)
         {
             YeniHesap f = new YeniHesap(MusteriId);
@@ -100,6 +110,7 @@ namespace GorselProgramlamaFinalOdevi
             tabControl1.SelectedTab = HesaplarTabPage;
         }
 
+        // Kredi kartı oluşturmak için YeniKrediKarti metodunu çağır
         private void KrediKartiOlustur(object sender, EventArgs e)
         {
             YeniKrediKarti f = new YeniKrediKarti(MusteriId);
@@ -110,6 +121,7 @@ namespace GorselProgramlamaFinalOdevi
 
         private void OdemelerButton_Click(object sender, EventArgs e)
         {
+            // Ödeme için gerekli alanların dolu olup olmadığını kontrol et
             if (OdemelerComboBox.SelectedIndex > -1 &&
                 !string.IsNullOrEmpty(OdemeTextBox.Text) &&
                 OdemeSekliComboBox.SelectedIndex > -1 &&
@@ -117,10 +129,10 @@ namespace GorselProgramlamaFinalOdevi
             {
                 bool result = false;
 
-                switch (OdemeSekliComboBox.SelectedIndex)
+                switch (OdemeSekliComboBox.SelectedIndex) // ComboBox'da odeme şekline göre (hesaptan veya keredi kartından) sorguyu gönder
                 {
                     case 0:
-                        result = vt.Query("INSERT INTO Odemeler (tipi, ucret, musteri_id) VALUES ('" + OdemelerComboBox.Text + "', '" + OdemeTextBox.Text + "', '" + MusteriId + "')") && 
+                        result = vt.Query("INSERT INTO Odemeler (tipi, ucret, musteri_id) VALUES ('" + OdemelerComboBox.Text + "', '" + OdemeTextBox.Text + "', '" + MusteriId + "')") &&
                             vt.Query("UPDATE Kredi_Kartlari SET borc = borc + " + OdemeTextBox.Text + " WHERE kredi_kart_id = " + HesapKrediKartiComboBox.Text);
 
                         if (result)
@@ -158,6 +170,7 @@ namespace GorselProgramlamaFinalOdevi
 
         }
 
+        // Seçilen ödeme iekline göre HesapKrediKartiComboBox'a gereken verileri ekle
         private void OdemeSekliComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             HesapKrediKartiComboBox.Items.Clear();

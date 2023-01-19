@@ -18,6 +18,8 @@ namespace GorselProgramlamaFinalOdevi
 
         private void HesapPanel_Load(object sender = null, EventArgs e = null)
         {
+            /* Bilgileri Control'de gerekli yerlere yazdır
+             */
             HesapAdi.Text = "Hesap Adı: " + hesap.adi;
             HesapLokasyon.Text = "Hesap Lokasyon: " + hesap.lokasyon;
             Bakiye.Text = "Bakiye: " + hesap.paraMiktari.ToString() + "₺";

@@ -16,17 +16,30 @@ namespace GorselProgramlamaFinalOdevi
 
         private void ParaCek_Load(object sender, EventArgs e)
         {
+            /*
+             * Hesaptaki para miktarını ekrana yazdır
+             */
             ParaLabel.Text = "Para Çekebiliceğiniz Miktar: " + hesap.paraMiktari + "₺";
             ParaNumericUpDown.Maximum = decimal.MaxValue;
         }
 
         private void ParaCekButton_Click(object sender, EventArgs e)
         {
+            /* Çekilecek paranın 1'den büyük olup olmadığını kontrol et
+             * değilse hata mesajı ver
+             * eğer büyükse hesaptaki paradan büyük olup olmadığını kontrol et
+             * eğer büyükse hata mesajı ver
+             * eğer değilse
+             * hesaptaki para miktarını azalt
+             * ve İşlem geçimişine ekle
+             * 
+             */
+
             decimal cekilecekPara = ParaNumericUpDown.Value;
 
-            if (cekilecekPara < 0)
+            if (cekilecekPara < 1)
             {
-                MessageBox.Show("Lütfen 0 ve üstünde bir değer girin", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lütfen 1'in üstünde bir değer girin", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (cekilecekPara > hesap.paraMiktari)
             {

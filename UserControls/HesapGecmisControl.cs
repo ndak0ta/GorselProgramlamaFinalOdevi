@@ -1,12 +1,5 @@
 ﻿using GorselProgramlamaFinalOdevi.Classes;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GorselProgramlamaFinalOdevi.UserControls
@@ -17,6 +10,7 @@ namespace GorselProgramlamaFinalOdevi.UserControls
         {
             InitializeComponent();
 
+            // Gelen bilgileri Control'e yazdır
             IslemNumarasıLabel.Text = islemGecmisi.Id.ToString();
             IslemTipiLabel.Text = islemGecmisi.Tipi.ToString();
             ParaDegisimiLabel.Text = islemGecmisi.ParaMiktari.ToString();

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GorselProgramlamaFinalOdevi
@@ -23,6 +16,10 @@ namespace GorselProgramlamaFinalOdevi
 
         private void ParaYatirButton_Click(object sender, EventArgs e)
         {
+            /* Hesaptaki parayı yatıralacak miktar kadar arttır
+             * ve işlem geçmişine kaydet
+             * 
+             */
             bool result = false;
             decimal yatırılacakPara = ParaNumericUpDown.Value;
 
@@ -39,6 +36,9 @@ namespace GorselProgramlamaFinalOdevi
 
         private void ParaYatir_Load(object sender, EventArgs e)
         {
+            /* ParaNumericUpDown Control'ünün maksimum değerini decimal veri tipinin
+             * maksimum değeri ile eşitle
+             */
             ParaNumericUpDown.Maximum = decimal.MaxValue;
         }
     }

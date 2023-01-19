@@ -8,10 +8,25 @@ namespace GorselProgramlamaFinalOdevi
 {
     internal class VeriTabani
     {
+        // Veritabanı bağlantısı için bağlantı kodları
         private OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\ndak0ta\\source\\repos\\GorselProgramlamaFinalOdevi\\bin\\Debug\\VakıfbankDB.accdb");
         private OleDbCommand cmd = new OleDbCommand();
         private OleDbDataReader dataReader;
 
+        /* Sql SELECT komutu için her veri tipi için tek tek özel metod tanımlandı sebebi ise
+         * SELECT komutunun geriye değer döndürmesidir öteki komutlarda böyle bir şey yok
+         * o yüzden öteki komutları tek bir metodla hallederken SELECT komutunda ayrı ayrı metod tanımlamamaız gerekiyor
+         * 
+         * Select metodlarının çalışma adımları:
+         * Select Metodu ile çekilecek veriye göre liste tanımla 
+         * bağlantıyı aç
+         * query'i komuta ata
+         * bağlantıyı komuta ata 
+         * komutu çalışıtır dataReader'a ata
+         * dataReader'daki verilerin hepsini veriye uygun nesneye koyarak listeye ata
+         * bağlantıyı kapat 
+         * listeyi geri döndür
+         */
         public List<Musteri> SelectMusteri(string query)
         {
             try
@@ -145,6 +160,19 @@ namespace GorselProgramlamaFinalOdevi
             }
         }
 
+        /* 
+         * Query Metodunun Çalışma adımları:
+         * Bağlantıyı Aç
+         * Komuta query'yi ata
+         * Komuta bağlantıyı ata
+         * Komutu çalıştır
+         * Bağlantıyı kapat
+         * true değerini dön
+         * 
+         * Bu metodun bool değer döndürme sebebi şudur
+         * metodun çağrıldığı yerde programın başarıyla çalışıp
+         * çalışmadığını kontrol etmek
+         */
         public bool Query(string query)
         {
             try
@@ -155,7 +183,6 @@ namespace GorselProgramlamaFinalOdevi
                 cmd.ExecuteNonQuery();
                 con.Close();
                 return true;
-                // MessageBox.Show("İşlem başarıyla gerçekleştirildi", "", MessageBoxButtons.OK, MessageBoxIcon.Information)
             }
             catch (Exception e)
             {
